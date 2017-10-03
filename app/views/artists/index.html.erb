@@ -17,7 +17,6 @@
       <tr>
         <td><%= artist.name %></td>
         <td><%= artist.bio %></td>
-        <td><%= artist.id %></td>
         <td><%= link_to 'Show', artist %></td>
         <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
         <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,7 +24,12 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
+<% if @artists.size == 0 %>
+  <em>No artists yet</em>
+  <br>
+<% end %>
+<br>
+<%= link_to 'Home', homepage_path %>
+&emsp;
 <%= link_to 'New Artist', new_artist_path %>
