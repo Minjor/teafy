@@ -4,7 +4,11 @@ class GenresController < ApplicationController
   # GET /genres
   # GET /genres.json
   def index
-    @genres = Genre.all
+    if params[:artist_id]
+      @genres = Artist.find(params[:artist_id]).genres
+    else
+      @genres = Genre.all
+    end
   end
 
   # GET /genres/1

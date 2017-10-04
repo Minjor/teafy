@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+     <%= f.label :genre %>
+     <%= f.select :genre_ids, options_for_select(Genre.all.collect { |a| [a.name, a.id] }) %>
+  </div>
+
+  <div class="field">
     <%= f.label :bio %>
     <%= f.text_area :bio %>
   </div>
