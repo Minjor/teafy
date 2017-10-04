@@ -1,4 +1,13 @@
 <p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+  <p align="right">
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  </p>
+<% else %>
+  <p align='right'>
+  <%= link_to('Login', new_user_session_path)  %>
+  </p>
+<% end %>
 
 <h1>Teafy</h1>
 <br>
