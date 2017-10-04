@@ -17,13 +17,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :album_id %>
-    <%= f.number_field :album_id %>
+     <%= f.label :artist %>
+     <%= f.select :artist_id, options_for_select(Artist.all.collect { |a| [a.name, a.id] }) %>
   </div>
 
   <div class="field">
-    <%= f.label :artist_id %>
-    <%= f.number_field :artist_id %>
+     <%= f.label :album %>
+     <%= f.select :album_id, options_for_select(Album.all.collect { |a| [a.name, a.id] }) %>
   </div>
 
   <div class="actions">

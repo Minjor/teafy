@@ -6,12 +6,12 @@
 
 <p>
   <strong>Album:</strong>
-  <%= @song.album_id %>
+  <%= Album.find(@song.album_id).name %>
 </p>
 
 <p>
   <strong>Artist:</strong>
-  <%= @song.artist_id %>
+  <%= Artist.find(@song.artist_id).name %>
 </p>
 
 <%= link_to 'Edit', edit_song_path(@song) %> |
