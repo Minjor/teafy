@@ -6,6 +6,8 @@ class GenresController < ApplicationController
   def index
     if params[:artist_id]
       @genres = Artist.find(params[:artist_id]).genres
+    elsif params[:album_id]
+      @genres = Album.find(params[:album_id]).genres
     else
       @genres = Genre.all
     end

@@ -4328,3 +4328,1048 @@ Processing by ArtistsController#index as HTML
 Completed 200 OK in 97ms (Views: 93.3ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 22:21:22 -0300
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 321ms (Views: 292.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 22:21:24 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 132ms (Views: 39.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/albums/new" for 127.0.0.1 at 2017-10-03 22:27:26 -0300
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered albums/_form.html.erb (30.9ms)
+  Rendered albums/new.html.erb within layouts/application (39.3ms)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `genre_ids' for #<Album:0x007fb71102dd78>):
+    23: 
+    24:   <div class="field">
+    25:      <%= f.label :genre %>
+    26:      <%= f.select :genre_ids, options_for_select(Genre.all.collect { |a| [a.name, a.id] }) %>
+    27:   </div>
+    28: 
+    29:   <div class="actions">
+  
+app/views/albums/_form.html.erb:26:in `block in _app_views_albums__form_html_erb__2062796216931600696_70212121310120'
+app/views/albums/_form.html.erb:1:in `_app_views_albums__form_html_erb__2062796216931600696_70212121310120'
+app/views/albums/new.html.erb:3:in `_app_views_albums_new_html_erb___2703850220461665557_70212128870040'
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.5ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (137.6ms)
+Started GET "/albums/new" for 127.0.0.1 at 2017-10-03 22:28:01 -0300
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered albums/_form.html.erb (14.3ms)
+  Rendered albums/new.html.erb within layouts/application (18.6ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `genre_ids' for #<Album:0x007fb7110660d8>):
+    23: 
+    24:   <!-- <div class="field">
+    25:      <%= f.label :genre %>
+    26:      <%= f.select :genre_ids, options_for_select(Genre.all.collect { |a| [a.name, a.id] }) %>
+    27:   </div> -->
+    28: 
+    29:   <div class="actions">
+  
+app/views/albums/_form.html.erb:26:in `block in _app_views_albums__form_html_erb__2062796216931600696_70212111837640'
+app/views/albums/_form.html.erb:1:in `_app_views_albums__form_html_erb__2062796216931600696_70212111837640'
+app/views/albums/new.html.erb:3:in `_app_views_albums_new_html_erb___2703850220461665557_70212120682720'
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.4ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (125.9ms)
+Started GET "/albums/new" for 127.0.0.1 at 2017-10-03 22:28:16 -0300
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered albums/_form.html.erb (5.2ms)
+  Rendered albums/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 375ms (Views: 331.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 22:28:20 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 85ms (Views: 38.0ms | ActiveRecord: 0.5ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7886812963137803205);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (18.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAlbumGenres (20171004012917)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (415.8ms)[0m  [1m[35mCREATE TABLE "album_genres" ("id" serial primary key, "album_id" integer, "genre_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_album_genres_on_album_id" ON "album_genres"  ("album_id")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_album_genres_on_genre_id" ON "album_genres"  ("genre_id")[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004012917"]]
+  [1m[35m (64.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (36.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7886812963137803205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 22:40:03 -0300
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 22:40:03 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (8.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomesController#index as HTML
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.5ms)
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 459ms (Views: 390.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 462ms (Views: 402.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-10-03 22:40:06 -0300
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 150ms (Views: 45.6ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 22:40:08 -0300
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 80ms (Views: 75.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:40:09 -0300
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 116ms (Views: 53.4ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 22:40:10 -0300
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 72ms (Views: 68.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 22:40:11 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 111ms (Views: 52.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/albums/new" for 127.0.0.1 at 2017-10-03 22:40:46 -0300
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered albums/_form.html.erb (20.3ms)
+  Rendered albums/new.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 110ms (Views: 68.8ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 22:41:04 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (7.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 70ms (Views: 57.9ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 22:41:07 -0300
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 75ms (Views: 70.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:41:08 -0300
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (4.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 83ms (Views: 72.1ms | ActiveRecord: 4.1ms)
+
+
+Started DELETE "/artists/6" for 127.0.0.1 at 2017-10-03 22:41:12 -0300
+Processing by ArtistsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zq7F1EkEamwgXqy0Xl4FM1YuuMJCUET7RJZB9onuPFgFSqlq7CfrMBm5tnAk4Pbr7NYOv7SQ/LKG/cLHVfhBiQ==", "id"=>"6"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[31mDELETE FROM "artists" WHERE "artists"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists
+Completed 302 Found in 9ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:41:12 -0300
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 61ms (Views: 58.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 22:41:17 -0300
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 47ms (Views: 43.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-10-03 22:41:18 -0300
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 132ms (Views: 47.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2017-10-03 22:41:20 -0300
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/_form.html.erb (2.8ms)
+  Rendered genres/new.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 116ms (Views: 60.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/genres" for 127.0.0.1 at 2017-10-03 22:41:26 -0300
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LZmoen1Ro8m32l4zpM6h3vQXblWxtVb2T6EvjdJbIHQzbMLk7m8CHDeOJ+N8bGTnJhqe3jz4bc1oAwQHSZELMw==", "genre"=>{"name"=>"Hardstyle"}, "commit"=>"Create Genre"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (42.0ms)[0m  [1m[32mINSERT INTO "genres" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2017-10-04 01:41:26.890968"], ["updated_at", "2017-10-04 01:41:26.890968"], ["name", "Hardstyle"]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/genres/3
+Completed 302 Found in 57ms (ActiveRecord: 50.7ms)
+
+
+Started GET "/genres/3" for 127.0.0.1 at 2017-10-03 22:41:26 -0300
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering genres/show.html.erb within layouts/application
+  Rendered genres/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 77ms (Views: 39.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-10-03 22:41:29 -0300
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 54ms (Views: 50.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2017-10-03 22:41:32 -0300
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/_form.html.erb (4.0ms)
+  Rendered genres/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 63ms (Views: 59.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/genres" for 127.0.0.1 at 2017-10-03 22:41:40 -0300
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+UUp07Aw/kgAS6WZ3YL8WtBWeOmdCLEOKIsbPfJNCtrnsENNIw5fnYAf3EkFIDljAluIYhBFijUPKTC3aYchnQ==", "genre"=>{"name"=>"Electronica"}, "commit"=>"Create Genre"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "genres" ("created_at", "updated_at", "name") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2017-10-04 01:41:40.337844"], ["updated_at", "2017-10-04 01:41:40.337844"], ["name", "Electronica"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/genres/4
+Completed 302 Found in 7ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/genres/4" for 127.0.0.1 at 2017-10-03 22:41:40 -0300
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering genres/show.html.erb within layouts/application
+  Rendered genres/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 45ms (Views: 40.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-10-03 22:41:41 -0300
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 76ms (Views: 71.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 22:41:43 -0300
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 67ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:41:44 -0300
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 337ms (Views: 75.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/artists/new" for 127.0.0.1 at 2017-10-03 22:41:46 -0300
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered artists/_form.html.erb (37.2ms)
+  Rendered artists/new.html.erb within layouts/application (41.4ms)
+Completed 200 OK in 149ms (Views: 82.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/artists" for 127.0.0.1 at 2017-10-03 22:42:37 -0300
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6Pe0hJNhu3DA81shDsifolOaFY2ApzeM49EFgMXIC592wwrl76SSLOZ+Zm8J0nD0jgZurHw3MkmizOnAWvnw3A==", "artist"=>{"name"=>"Martin", "genre_ids"=>"1", "bio"=>"Gran programador, sabio de la vida"}, "commit"=>"Create Artist"}
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Martin"], ["bio", "Gran programador, sabio de la vida"], ["created_at", "2017-10-04 01:42:37.824818"], ["updated_at", "2017-10-04 01:42:37.824818"]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "artist_genres" ("artist_id", "created_at", "updated_at", "genre_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 7], ["created_at", "2017-10-04 01:42:37.827385"], ["updated_at", "2017-10-04 01:42:37.827385"], ["genre_id", 1]]
+  [1m[35m (47.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists/7
+Completed 302 Found in 70ms (ActiveRecord: 53.6ms)
+
+
+Started GET "/artists/7" for 127.0.0.1 at 2017-10-03 22:42:37 -0300
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  Rendered artists/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 207ms (Views: 202.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/artists/7" for 127.0.0.1 at 2017-10-03 22:45:12 -0300
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "artist_genres" ON "genres"."id" = "artist_genres"."genre_id" WHERE "artist_genres"."artist_id" = $1[0m  [["artist_id", 7]]
+  Rendered artists/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 357ms (Views: 350.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:45:46 -0300
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 89ms (Views: 49.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:46:22 -0300
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `limit' for "Gran programador, sabio de la vida":String):
+    17:       <tr>
+    18:         <% param1 = params[artist.id] %>
+    19:         <td><%= artist.name %></td>
+    20:         <td><%= artist.bio.limit(20) %></td>
+    21:         <td><%= link_to 'Genres', genres_path(:artist_id => artist.id) %></td>
+    22:         <td><%= link_to 'Show', artist %></td>
+    23:         <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
+  
+app/views/artists/index.html.erb:20:in `block in _app_views_artists_index_html_erb__2549543944897195119_70212123234460'
+app/views/artists/index.html.erb:16:in `_app_views_artists_index_html_erb__2549543944897195119_70212123234460'
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.8ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (187.4ms)
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:47:03 -0300
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 230ms (Views: 225.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/artists/7" for 127.0.0.1 at 2017-10-03 22:47:08 -0300
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "artist_genres" ON "genres"."id" = "artist_genres"."genre_id" WHERE "artist_genres"."artist_id" = $1[0m  [["artist_id", 7]]
+  Rendered artists/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 69ms (Views: 61.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/artists/7" for 127.0.0.1 at 2017-10-03 22:47:52 -0300
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.9ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "artist_genres" ON "genres"."id" = "artist_genres"."genre_id" WHERE "artist_genres"."artist_id" = $1[0m  [["artist_id", 7]]
+  Rendered artists/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 54ms (Views: 43.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:48:18 -0300
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:48:18 -0300
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (4.7ms)
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (1.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 129ms (Views: 117.8ms | ActiveRecord: 1.0ms)
+
+
+Completed 200 OK in 87ms (Views: 80.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/artists/new" for 127.0.0.1 at 2017-10-03 22:48:20 -0300
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered artists/_form.html.erb (14.6ms)
+  Rendered artists/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 99ms (Views: 64.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/artists" for 127.0.0.1 at 2017-10-03 22:48:39 -0300
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WOFfaci4kE+AiQMIyKW4FzPuXuSwE/Haj4A2agp4YubG1eEItH25E6YEPkbPv1dB7nIlxUyD9B/OndoqlUmZpQ==", "artist"=>{"name"=>"Vicho", "genre_ids"=>"3", "bio"=>"Gran programador, sabio de la vida"}, "commit"=>"Create Artist"}
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 3[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Vicho"], ["bio", "Gran programador, sabio de la vida"], ["created_at", "2017-10-04 01:48:39.176219"], ["updated_at", "2017-10-04 01:48:39.176219"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "artist_genres" ("artist_id", "created_at", "updated_at", "genre_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 8], ["created_at", "2017-10-04 01:48:39.178444"], ["updated_at", "2017-10-04 01:48:39.178444"], ["genre_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists/8
+Completed 302 Found in 15ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/artists/8" for 127.0.0.1 at 2017-10-03 22:48:39 -0300
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "artist_genres" ON "genres"."id" = "artist_genres"."genre_id" WHERE "artist_genres"."artist_id" = $1[0m  [["artist_id", 8]]
+  Rendered artists/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 49ms (Views: 43.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:48:40 -0300
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (1.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 64ms (Views: 58.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/artists/7/edit" for 127.0.0.1 at 2017-10-03 22:48:42 -0300
+Processing by ArtistsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering artists/edit.html.erb within layouts/application
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "genres".id FROM "genres" INNER JOIN "artist_genres" ON "genres"."id" = "artist_genres"."genre_id" WHERE "artist_genres"."artist_id" = $1[0m  [["artist_id", 7]]
+  Rendered artists/_form.html.erb (6.9ms)
+  Rendered artists/edit.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 94ms (Views: 66.1ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/artists/7" for 127.0.0.1 at 2017-10-03 22:48:49 -0300
+Processing by ArtistsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ThcFoWEIOpXpWAhEpDbn0K/+4/uCet7h2qdQM9H0/TtWSFY/luG80LfJjyBThnF06t8Wks4zhnjJSMDytG+N8g==", "artist"=>{"name"=>"Martin", "genre_ids"=>"1", "bio"=>"Gran programador, bueno para la guitarra"}, "commit"=>"Update Artist", "id"=>"7"}
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 1[0m
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "artist_genres" ON "genres"."id" = "artist_genres"."genre_id" WHERE "artist_genres"."artist_id" = $1[0m  [["artist_id", 7]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "artists" SET "bio" = $1, "updated_at" = $2 WHERE "artists"."id" = $3[0m  [["bio", "Gran programador, bueno para la guitarra"], ["updated_at", "2017-10-04 01:48:49.462962"], ["id", 7]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists/7
+Completed 302 Found in 64ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/artists/7" for 127.0.0.1 at 2017-10-03 22:48:49 -0300
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "artist_genres" ON "genres"."id" = "artist_genres"."genre_id" WHERE "artist_genres"."artist_id" = $1[0m  [["artist_id", 7]]
+  Rendered artists/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 54ms (Views: 49.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:48:51 -0300
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (5.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 74ms (Views: 61.4ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/artists/new" for 127.0.0.1 at 2017-10-03 22:49:00 -0300
+Processing by ArtistsController#new as HTML
+  Rendering artists/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered artists/_form.html.erb (4.8ms)
+  Rendered artists/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 110ms (Views: 47.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/artists" for 127.0.0.1 at 2017-10-03 22:49:13 -0300
+Processing by ArtistsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GRJ9bG6tQn3BLY2oaXjbEH8sM5/5dgQSR6+qUQgesryHJsMNEmhrIeegsOZuYjRGorBIvgXmAdcGskYRly9J/w==", "artist"=>{"name"=>"Clo", "genre_ids"=>"2", "bio"=>"Gran programador, bueno para diseñar"}, "commit"=>"Create Artist"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 2[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "artists" ("name", "bio", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Clo"], ["bio", "Gran programador, bueno para diseñar"], ["created_at", "2017-10-04 01:49:13.872096"], ["updated_at", "2017-10-04 01:49:13.872096"]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "artist_genres" ("artist_id", "created_at", "updated_at", "genre_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["artist_id", 9], ["created_at", "2017-10-04 01:49:13.874901"], ["updated_at", "2017-10-04 01:49:13.874901"], ["genre_id", 2]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/artists/9
+Completed 302 Found in 16ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/artists/9" for 127.0.0.1 at 2017-10-03 22:49:13 -0300
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "artist_genres" ON "genres"."id" = "artist_genres"."genre_id" WHERE "artist_genres"."artist_id" = $1[0m  [["artist_id", 9]]
+  Rendered artists/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 47ms (Views: 42.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:49:15 -0300
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (9.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 87ms (Views: 72.7ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 22:49:17 -0300
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 74ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 22:49:19 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 137ms (Views: 39.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/albums/new" for 127.0.0.1 at 2017-10-03 22:49:21 -0300
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered albums/_form.html.erb (7.0ms)
+  Rendered albums/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 98ms (Views: 47.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/albums" for 127.0.0.1 at 2017-10-03 22:49:34 -0300
+Processing by AlbumsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"csD7Z7891HgwP98BRpqUtd4tqwP2tRjLLq483m9+xW3ElEV4JaQmoYPcGQ760C769404SemOm5lsfZU4lkacCw==", "album"=>{"name"=>"Ser o no ser", "artist_id"=>"8", "genre_ids"=>"3"}, "commit"=>"Create Album"}
+Unpermitted parameter: genre_ids
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (201.2ms)[0m  [1m[32mINSERT INTO "albums" ("name", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ser o no ser"], ["artist_id", 8], ["created_at", "2017-10-04 01:49:34.935544"], ["updated_at", "2017-10-04 01:49:34.935544"]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/albums/1
+Completed 302 Found in 218ms (ActiveRecord: 210.4ms)
+
+
+Started GET "/albums/1" for 127.0.0.1 at 2017-10-03 22:49:35 -0300
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 127ms (Views: 44.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/albums/1" for 127.0.0.1 at 2017-10-03 22:50:34 -0300
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (12.2ms)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `artist' for #<Album:0x007fb70f9b7e90>
+Did you mean?  artist_id):
+     6: 
+     7: <p>
+     8:   <strong>Artist:</strong>
+     9:   <%= @album.artist %>
+    10: </p>
+    11: 
+    12: <%= link_to 'Edit', edit_album_path(@album) %> |
+  
+app/views/albums/show.html.erb:9:in `_app_views_albums_show_html_erb___1630444512587549167_70212108776120'
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.7ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (120.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7886812963137803205);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddArtistToAlbum (20171004015402)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (30.9ms)[0m  [1m[35mCREATE  INDEX  "index_album_on_artist_id" ON "album"  ("artist_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7886812963137803205)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7886812963137803205);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddArtistToAlbum (20171004015402)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (143.7ms)[0m  [1m[35mCREATE  INDEX  "index_albums_on_artist_id" ON "albums"  ("artist_id")[0m
+  [1m[35mSQL (25.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171004015402"]]
+  [1m[35m (22.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (82.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7886812963137803205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/albums/1" for 127.0.0.1 at 2017-10-03 22:56:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  Rendered albums/show.html.erb within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `artist' for #<Album:0x007fb70f778198>
+Did you mean?  artist_id):
+     6: 
+     7: <p>
+     8:   <strong>Artist:</strong>
+     9:   <%= @album.artist.name %>
+    10: </p>
+    11: 
+    12: <%= link_to 'Edit', edit_album_path(@album) %> |
+  
+app/views/albums/show.html.erb:9:in `_app_views_albums_show_html_erb___1630444512587549167_70212107604060'
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.6ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (137.3ms)
+Started GET "/albums/1" for 127.0.0.1 at 2017-10-03 22:56:52 -0300
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (1.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/show.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 483ms (Views: 467.5ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 22:57:03 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 96ms (Views: 40.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 22:57:45 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 66ms (Views: 59.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 22:58:26 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 60ms (Views: 55.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/artists/8" for 127.0.0.1 at 2017-10-03 22:58:28 -0300
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering artists/show.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "artist_genres" ON "genres"."id" = "artist_genres"."genre_id" WHERE "artist_genres"."artist_id" = $1[0m  [["artist_id", 8]]
+  Rendered artists/show.html.erb within layouts/application (59.5ms)
+Completed 200 OK in 128ms (Views: 94.8ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/artists" for 127.0.0.1 at 2017-10-03 22:58:30 -0300
+Processing by ArtistsController#index as HTML
+  Rendering artists/index.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  Rendered artists/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 72ms (Views: 41.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 22:58:33 -0300
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 102ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 22:59:11 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 487ms (Views: 482.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/albums/new" for 127.0.0.1 at 2017-10-03 22:59:16 -0300
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered albums/_form.html.erb (69.2ms)
+  Rendered albums/new.html.erb within layouts/application (73.7ms)
+Completed 200 OK in 146ms (Views: 109.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 22:59:18 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 174ms (Views: 165.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/albums/1" for 127.0.0.1 at 2017-10-03 22:59:23 -0300
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 82ms (Views: 46.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 22:59:26 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (1.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 77ms (Views: 69.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 23:02:33 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/index.html.erb within layouts/application (65.6ms)
+Completed 200 OK in 359ms (Views: 312.1ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/genres?album_id=1" for 127.0.0.1 at 2017-10-03 23:02:36 -0300
+Processing by GenresController#index as HTML
+  Parameters: {"album_id"=>"1"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (57.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "album_genres" ON "genres"."id" = "album_genres"."genre_id" WHERE "album_genres"."album_id" = $1[0m  [["album_id", 1]]
+  Rendered genres/index.html.erb within layouts/application (73.5ms)
+Completed 200 OK in 279ms (Views: 51.7ms | ActiveRecord: 65.5ms)
+
+
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 23:02:44 -0300
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 61ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2017-10-03 23:02:45 -0300
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (7.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered genres/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 95ms (Views: 80.9ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 23:02:52 -0300
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 71ms (Views: 63.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 23:02:53 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 88ms (Views: 82.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/genres?album_id=1" for 127.0.0.1 at 2017-10-03 23:02:55 -0300
+Processing by GenresController#index as HTML
+  Parameters: {"album_id"=>"1"}
+  [1m[36mAlbum Load (6.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (32.8ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "album_genres" ON "genres"."id" = "album_genres"."genre_id" WHERE "album_genres"."album_id" = $1[0m  [["album_id", 1]]
+  Rendered genres/index.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 99ms (Views: 54.0ms | ActiveRecord: 39.0ms)
+
+
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 23:02:58 -0300
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 69ms (Views: 64.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 23:03:00 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 68ms (Views: 61.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/albums/1" for 127.0.0.1 at 2017-10-03 23:03:01 -0300
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 79ms (Views: 53.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/albums/1" for 127.0.0.1 at 2017-10-03 23:03:46 -0300
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/show.html.erb within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `genres' for nil:NilClass):
+    11: 
+    12: <p>
+    13:   <strong>Genres:</strong>
+    14:   <% @artist.genres.each do |genre| %>
+    15:     <%= genre.name %>
+    16:   <% end %>
+    17: </p>
+  
+app/views/albums/show.html.erb:14:in `_app_views_albums_show_html_erb___1630444512587549167_70212106037620'
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.9ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (125.6ms)
+Started GET "/albums/1" for 127.0.0.1 at 2017-10-03 23:04:01 -0300
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/show.html.erb within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `genres' for nil:NilClass):
+    11: 
+    12: <p>
+    13:   <strong>Genres:</strong>
+    14:   <% @artist.genres.each do |genre| %>
+    15:     <%= genre.name %>
+    16:   <% end %>
+    17: </p>
+  
+app/views/albums/show.html.erb:14:in `_app_views_albums_show_html_erb___1630444512587549167_70212107647560'
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.3ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (102.1ms)
+Started GET "/albums/1" for 127.0.0.1 at 2017-10-03 23:04:22 -0300
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "album_genres" ON "genres"."id" = "album_genres"."genre_id" WHERE "album_genres"."album_id" = $1[0m  [["album_id", 1]]
+  Rendered albums/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 58ms (Views: 51.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 23:04:26 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (1.8ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mArtist Load (2.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 63ms (Views: 52.2ms | ActiveRecord: 4.0ms)
+
+
+Started DELETE "/albums/1" for 127.0.0.1 at 2017-10-03 23:04:35 -0300
+Processing by AlbumsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xbzeAeNJzT77pb5h8ZoDcyF9VvgkmtcyQOaXLHPqKPIOWLK/RmpMYsJCpKWLJPCrm4XghdJab3uCjRQdr/xVIw==", "id"=>"1"}
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "albums" WHERE "albums"."id" = $1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/albums
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 23:04:35 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  Rendered albums/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 63ms (Views: 57.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/albums/new" for 127.0.0.1 at 2017-10-03 23:04:58 -0300
+Processing by AlbumsController#new as HTML
+  Rendering albums/new.html.erb within layouts/application
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres"[0m
+  Rendered albums/_form.html.erb (82.6ms)
+  Rendered albums/new.html.erb within layouts/application (85.7ms)
+Completed 200 OK in 228ms (Views: 117.8ms | ActiveRecord: 45.7ms)
+
+
+Started POST "/albums" for 127.0.0.1 at 2017-10-03 23:05:06 -0300
+Processing by AlbumsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+B7iKq0aXQpZ4HjkEmu7e0LGE4YacTTIEkydavzLYhNOSlw1N4Ov0+oDvuuuIQE0a2aAzAVKt5pQnzSMBfM7dQ==", "album"=>{"name"=>"Ser o no ser", "artist_id"=>"8", "genre_ids"=>"3"}, "commit"=>"Create Album"}
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" WHERE "genres"."id" = 3[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (36.4ms)[0m  [1m[32mINSERT INTO "albums" ("name", "artist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ser o no ser"], ["artist_id", 8], ["created_at", "2017-10-04 02:05:07.005531"], ["updated_at", "2017-10-04 02:05:07.005531"]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "album_genres" ("album_id", "genre_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["album_id", 2], ["genre_id", 3], ["created_at", "2017-10-04 02:05:07.043977"], ["updated_at", "2017-10-04 02:05:07.043977"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/albums/2
+Completed 302 Found in 113ms (ActiveRecord: 41.9ms)
+
+
+Started GET "/albums/2" for 127.0.0.1 at 2017-10-03 23:05:07 -0300
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAlbum Load (1.2ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering albums/show.html.erb within layouts/application
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "album_genres" ON "genres"."id" = "album_genres"."genre_id" WHERE "album_genres"."album_id" = $1[0m  [["album_id", 2]]
+  Rendered albums/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 51ms (Views: 44.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/albums" for 127.0.0.1 at 2017-10-03 23:05:09 -0300
+Processing by AlbumsController#index as HTML
+  Rendering albums/index.html.erb within layouts/application
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered albums/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 79ms (Views: 68.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/genres?album_id=2" for 127.0.0.1 at 2017-10-03 23:05:11 -0300
+Processing by GenresController#index as HTML
+  Parameters: {"album_id"=>"2"}
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT "genres".* FROM "genres" INNER JOIN "album_genres" ON "genres"."id" = "album_genres"."genre_id" WHERE "album_genres"."album_id" = $1[0m  [["album_id", 2]]
+  Rendered genres/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 90ms (Views: 44.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/homepage" for 127.0.0.1 at 2017-10-03 23:05:13 -0300
+Processing by HomesController#index as HTML
+  Rendering homes/index.html.erb within layouts/application
+  Rendered homes/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 72ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-10-03 23:05:20 -0300
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (31.6ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  Rendered songs/index.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 177ms (Views: 54.0ms | ActiveRecord: 33.8ms)
+
+

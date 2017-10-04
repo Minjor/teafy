@@ -5,6 +5,13 @@
 </h2>
 
 <p>
+  <strong>Genres:</strong>
+  <% @artist.genres.each do |genre| %>
+    <%= genre.name %>
+  <% end %>
+</p>
+
+<p>
   <strong>Bio:</strong>
   <%= @artist.bio %>
 </p>
