@@ -16,5 +16,21 @@
   <%= @artist.bio %>
 </p>
 
+<table>
+  <thead>
+    <tr>
+      <th align="left">Albums</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @artist.albums.each do |album| %>
+      <tr>
+        <td><%= link_to album.name, Album.find_by_name(album.name) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
