@@ -1,10 +1,10 @@
-<%= form_for(album) do |f| %>
-  <% if album.errors.any? %>
+<%= form_for @album, html: { multipart: true } do |f| %>
+  <% if @album.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(album.errors.count, "error") %> prohibited this album from being saved:</h2>
+      <h2><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h2>
 
       <ul>
-      <% album.errors.full_messages.each do |message| %>
+      <% @album.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -24,6 +24,16 @@
   <div class="field">
      <%= f.label :genre %>
      <%= f.select :genre_ids, options_for_select(Genre.all.collect { |a| [a.name, a.id] }) %>
+  </div>
+
+  <div class="field">
+     <%= f.label :image %>
+     <%= f.file_field :image %>
+     <% if f.object.image? %>
+       <%= image_tag f.object.image.url %>
+       <%= f.label :remove_image %>
+       <%= f.check_box :remove_image %>
+     <% end %>
   </div>
 
   <div class="actions">

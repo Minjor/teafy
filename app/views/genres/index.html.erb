@@ -15,8 +15,10 @@
       <tr>
         <td><%= genre.name %></td>
         <td><%= link_to 'Show', genre %></td>
-        <td><%= link_to 'Edit', edit_genre_path(genre) %></td>
-        <td><%= link_to 'Destroy', genre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? && current_user.admin? %>
+          <td><%= link_to 'Edit', edit_genre_path(genre) %></td>
+          <td><%= link_to 'Destroy', genre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -24,9 +26,11 @@
 <br>
 <% if @genres.size == 0 %>
   <em>No genres yet</em>
-  <br>
+<br>
 <% end %>
 <br>
 <%= link_to 'Home', homepage_path %>
 &emsp;
-<%= link_to 'New Genre', new_genre_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Genre', new_genre_path %>
+<% end %>

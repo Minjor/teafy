@@ -9,6 +9,30 @@
   </head>
 
   <body>
+    <!-- NavBar -->
+    <header id="header">
+      <div class="inner">
+          <a class="logo">Teafy</a>
+          <nav id="nav">
+              <%= link_to 'Home', homepage_path %>
+              <% if user_signed_in? %>
+                <%= link_to('Your Profile',user_profile_path ) %>
+                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              <% else %>
+                <%= link_to('Login', new_user_session_path)  %>
+              <% end %>
+          </nav>
+      </div>
+    </header>
+    <!-- Code -->
     <%= yield %>
+    <!-- Copyright -->
+    <section id="three">
+        <div class="inner">
+            <div class="copyright">
+                &copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>.
+            </div>
+        </div>
+    </section>
   </body>
 </html>

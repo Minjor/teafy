@@ -19,8 +19,10 @@
         <td><%= link_to Album.find(song.album_id).name, Album.find(song.album_id) %></td>
         <td><%= link_to Artist.find(song.artist_id).name, Artist.find(song.artist_id) %></td>
         <td><%= link_to 'Show', song %></td>
-        <td><%= link_to 'Edit', edit_song_path(song) %></td>
-        <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? && current_user.admin? %>
+          <td><%= link_to 'Edit', edit_song_path(song) %></td>
+          <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +36,6 @@
 <br>
 <%= link_to 'Home', homepage_path %>
 &emsp;
-<%= link_to 'New Song', new_song_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Song', new_song_path %>
+<% end %>

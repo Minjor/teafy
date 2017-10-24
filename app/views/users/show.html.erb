@@ -1,0 +1,21 @@
+<h2><%= current_user.username %></h2>
+<p>
+  <strong></strong>
+  <%= image_tag @user.pic.url, size: 200 %>
+</p>
+
+<% if current_user.admin? %>
+  <p> <strong>Role: </strong> Admin</p>
+<% else %>
+  <p><strong>Role: </strong>User</p>
+<% end %>
+<p>
+  <strong>Registered mail: </strong>
+  <%= current_user.email %>
+</p>
+<p>
+  <strong>Join: </strong>
+  <%= current_user.created_at.strftime("%Y/%m/%d") %>
+</p>
+<p> <%= link_to "Settings", edit_user_registration_path %> </p>
+<p>Find me in app/views/users/show.html.erb</p>

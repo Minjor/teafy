@@ -1,22 +1,70 @@
 <p id="notice"><%= notice %></p>
-<% if user_signed_in? %>
-  <p align="right">
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  </p>
-<% else %>
-  <p align='right'>
-  <%= link_to('Login', new_user_session_path)  %>
-  </p>
-<% end %>
+<section id="two">
+    <div class="inner">
+        <article>
+            <div class="content">
+                <header>
+                    <h3><%=link_to 'Genres', genres_path %></h3>
+                </header>
+                <div class="image fit">
+                    <%= image_tag 'genres.jpg' %>
+                </div>
+                <p>Here you'll find all the music genres we have to offer</p>
+            </div>
+          <% if user_signed_in? && current_user.admin? %>
+            <div class="content">
+              <header>
+                  <h3 style="display:">Si soy admin puedo ver esto</h3>
+              </header>
+            </div>
+          <% elsif user_signed_in? && !current_user.admin? %>
+          <div class="content">
+            <header>
+                <h3 style="display:">Si soy usuario comun veo esto</h3>
+            </header>
+          </div>
+          <% end %>
+        </article>
+        <article class="alt">
+            <div class="content">
+                <header>
+                    <h3><%=link_to 'Artists', artists_path %></h3>
+                </header>
+                <div class="image fit">
+                    <%= image_tag 'artists.jpg' %>
+                </div>
+                <p>All your favourite artists!</p>
+            </div>
+            <div class="content">
+                <header>
+                    <h3><%=link_to 'Albums', albums_path %></h3>
+                </header>
+                <div class="image fit">
+                    <%= image_tag 'albums.jpg' %>
+                </div>
+                <p>All your favourite albums!</p>
+            </div>
+            <div class="content">
+                <header>
+                    <h3><%=link_to 'Songs', songs_path %></h3>
+                </header>
+                <div class="image fit">
+                    <%= image_tag 'songs.jpg' %>
+                </div>
+                <p>All your favourite songs!</p>
+            </div>
+        </article>
+    </div>
+</section>
+<section="main">
+    <header class="major special">
+        <h1>News</h1>
+        <p>Here's to keep you updated on all the news about your favourite artists</p>
+    </header>
+    <%  %>
+    <header>
+        <h3>Heading with a Subtitle</h3>
+        <p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+    </header>
 
-<h1>Teafy</h1>
-<br>
-<h2>
-<%=link_to 'Genres', genres_path %>
-&emsp;
-<%=link_to 'Artists', artists_path %>
-&emsp;
-<%=link_to 'Albums', albums_path %>
-&emsp;
-<%=link_to 'Songs', songs_path %>
-</h2>
+</section>
