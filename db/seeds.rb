@@ -20,9 +20,9 @@ Album.create([{name: 'Perpetual Burn', artist_id: Artist.find_by_name('Jason Bec
               {name: 'Weightless', artist_id: Artist.find_by_name('Animals as Leaders').id, genre_ids: 2},
               {name: 'The Madness of Many', artist_id: Artist.find_by_name('Animals as Leaders').id, genre_ids: 2},
               {name: 'The Joy of Motion', artist_id: Artist.find_by_name('Animals as Leaders').id, genre_ids: 2},
-              {name: 'Revelations', artist_id: Artist.find_by_name('Audioslave').id, genre_ids: 2}
-              {name: 'A Night at the Opera', artist_id: Artist.find_by_name('Queen').id, genre_ids: 2}
-              {name: 'We like it here', artist_id: Artist.find_by_name('Snarky Puppy').id, genre_ids: 8}
+              {name: 'Revelations', artist_id: Artist.find_by_name('Audioslave').id, genre_ids: 2},
+              {name: 'A Night at the Opera', artist_id: Artist.find_by_name('Queen').id, genre_ids: 2},
+              {name: 'We like it here', artist_id: Artist.find_by_name('Snarky Puppy').id, genre_ids: 8},
               {name: 'Fahrenheit', artist_id: Artist.find_by_name('Toto').id, genre_ids: 2}])
 Song.create([{name: 'An Infinite Regression', album_id: Album.find_by_name('Weightless').id, artist_id: Artist.find_by_name('Animals as Leaders').id},
   {name: 'Odessa', album_id: Album.find_by_name('Weightless').id, artist_id: Artist.find_by_name('Animals as Leaders').id},
