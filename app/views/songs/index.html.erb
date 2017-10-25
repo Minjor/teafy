@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Songs</h1>
-
+<%= form_tag(songs_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Songs" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
 <table>
   <thead>
     <tr>
@@ -34,8 +37,6 @@
   <br>
 <% end %>
 <br>
-<%= link_to 'Home', homepage_path %>
-&emsp;
 <% if user_signed_in? %>
   <%= link_to 'New Song', new_song_path %>
 <% end %>

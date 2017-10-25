@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :playlists
   get 'users/show', as: 'user_profile'
-
+  get 'users' => 'users#index'
   get 'user/show'
 
   root to: "homes#index"
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   resources :genres
   resources :artists
   resources :homes
+  resources :news
   devise_for :users, controllers: {
         sessions: 'users/sessions',
         registrations: 'users/registrations'

@@ -1,5 +1,5 @@
-<p id="notice"><%= notice %></p>
 <section id="two">
+    <p id="notice" align="center"><%= notice %></p>
     <div class="inner">
         <article>
             <div class="content">
@@ -11,19 +11,7 @@
                 </div>
                 <p>Here you'll find all the music genres we have to offer</p>
             </div>
-          <% if user_signed_in? && current_user.admin? %>
-            <div class="content">
-              <header>
-                  <h3 style="display:">Si soy admin puedo ver esto</h3>
-              </header>
-            </div>
-          <% elsif user_signed_in? && !current_user.admin? %>
-          <div class="content">
-            <header>
-                <h3 style="display:">Si soy usuario comun veo esto</h3>
-            </header>
-          </div>
-          <% end %>
+
         </article>
         <article class="alt">
             <div class="content">
@@ -61,10 +49,16 @@
         <h1>News</h1>
         <p>Here's to keep you updated on all the news about your favourite artists</p>
     </header>
-    <%  %>
-    <header>
-        <h3>Heading with a Subtitle</h3>
-        <p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-    </header>
+    <% New.all.each do |n| %>
+        <header>
+            <h3><%= n.title %></h3>
+            <p><%= n.content %></p>
+        </header>
+        <hr />
+    <% end %>
+    <% # if current_user.admin? %>
+    <% @news = New.new %>
+    <%= link_to 'Add New', new_news_path %>
+    <% # end %>
 
 </section>

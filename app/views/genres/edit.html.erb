@@ -1,6 +1,13 @@
 <h1>Editing Genre</h1>
 
-<%= render 'form', genre: @genre %>
+<% if user_signed_in? && current_user.admin?%>
+  <%= render 'form', genre: @genre %>
 
-<%= link_to 'Show', @genre %> |
-<%= link_to 'Back', genres_path %>
+  <%= link_to 'Show', @genre %> |
+  <%= link_to 'Back', genres_path %>
+
+<% else %>
+  <p>You don't have permission to edit this genre. Please go back to the homepage.</p>
+<% end %>
+
+<%= link_to 'Back', artists_path %>
