@@ -37322,3 +37322,10 @@ puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
   Rendered /Users/Vicho/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (287.1ms)
 =======
 >>>>>>> b30eeaca591d87355107a0285bf939fb473fcd6c
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7886812963137803205);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (32.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (28.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7886812963137803205)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m

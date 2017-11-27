@@ -36,15 +36,11 @@
               <%= link_to 'Home', homepage_path %>
               <% if user_signed_in? %>
                 <%= link_to('Your Profile',user_profile_path(:id => current_user.id) ) %>
-<<<<<<< HEAD
                 <%= link_to('Your Library',your_library_path ) %>
                   <% if current_user.admin? %>
                     <%= link_to 'Admin Dashboard', admin_dashboard_path %>
                   <% end %>
                 <%= link_to('Logout', destroy_user_session_path) %>
-=======
-                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
->>>>>>> b30eeaca591d87355107a0285bf939fb473fcd6c
               <% else %>
                 <%= link_to('Login', new_user_session_path)  %>
               <% end %>
@@ -58,11 +54,8 @@
     <section id="three">
         <div class="inner">
             <div class="copyright">
-<<<<<<< HEAD
               <%= image_tag('teafy_logo_negro.png', size: "190x75") %>
               <br>
-=======
->>>>>>> b30eeaca591d87355107a0285bf939fb473fcd6c
                 &copy; Untitled Design: <a href="https://templated.co/">TEMPLATED</a>.
             </div>
         </div>
