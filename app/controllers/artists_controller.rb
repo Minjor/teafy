@@ -12,7 +12,6 @@ class ArtistsController < ApplicationController
     end
 
   end
-
   # GET /artists/1
   # GET /artists/1.json
   def show

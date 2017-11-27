@@ -3,7 +3,7 @@
     <h1>New Artist</h1>
     <% if user_signed_in? %>
       <%= render 'form', artist: @artist %>
-      
+
     <% else %>
       <p>You don't have permission to create an artist. Please Login or go back to the homepage.</p>
     <% end %>

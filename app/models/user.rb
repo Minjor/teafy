@@ -18,13 +18,13 @@ class User < ApplicationRecord
   has_many :songs, through: :followed_songs
 
   has_one :song_calification
-  validates :song_calification, uniqueness: true
+  # validates :song_calification, uniqueness: true
   has_one :album_calification
-  validates :album_calification, uniqueness: true
+  # validates :album_calification, uniqueness: true
   has_one :playlist_calification
-  validates :playlist_calification, uniqueness: true
+  # validates :playlist_calification, uniqueness: true
   has_one :artist_calification
-  validates :artist_calification, uniqueness: true
+  # validates :artist_calification, uniqueness: true
 
   before_create do
     if self.code == 'quaker'
