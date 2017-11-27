@@ -1,35 +1,92 @@
-<p id="notice"><%= notice %></p>
+<section id="two">
+    <div class="inner">
+        <article>
+            <p id="notice"><%= notice %></p>
 
-<h2>
-  <strong><%= @album.name %></strong>
-</h2>
+            <h2>
+              <strong><%= @album.name %></strong>
+            </h2>
 
-<p>
-  <strong>Artist:</strong>
-  <%= Artist.find(@album.artist_id).name %>
-</p>
+            <p>
+              <strong>Artist:</strong>
+              <%= Artist.find(@album.artist_id).name %>
+            </p>
 
-<p>
-  <strong>Genres:</strong>
-  <% @album.genres.each do |genre| %>
-    <%= genre.name %>
-  <% end %>
-</p>
-<table>
-  <thead>
-    <tr>
-      <th align="left">Songs</th>
-    </tr>
-  </thead>
+            <p>
+              <strong>Artwork:</strong><br>
+              &emsp;<%= image_tag(@album.image.url, size: 420) %>
+            </p>
 
-  <tbody>
-    <% @album.songs.each do |song| %>
-      <tr>
-        <td><%= link_to song.name, song_path %></td>
-      </tr>
+            <p>
+              <strong>Genres:</strong>
+              <% @album.genres.each do |genre| %>
+                <%= genre.name %>
+              <% end %>
+            </p>
+            <div>
+                <p>
+                    <strong>Rating: </strong>
+                    <%= AlbumCalification.where(album_id: @album.id).average(:grade) %>
+                </p>
+                <% if user_signed_in?
+                    if User.find(current_user.id).album_calification
+                        @c = User.find(current_user.id).album_calification
+                    else
+                        @c = AlbumCalification.new
+                    end %>
+                    <%= render 'acform', album_calification: @c %>
+                <% end %>
+            </div>
+
+            <!-- Songs -->
+            <h4>Songs</h4>
+            <ul class="alt">
+                <% @album.songs.each do |song| %>
+                  <li><%= link_to song.name, song_path %></li>
+                <% end %>
+                <% if @album.songs.size == 0 %>
+                    <li>This album doesn't have songs yet</li>
+                <% end %>
+            </ul>
+        </article>
+
+        <article>
+            <br><br><br>
+            <h4>Video</h4>
+            <iframe width="480" height="270" src="<%= @url_youtube %>"
+            frameborder="0" gesture="media" allowfullscreen></iframe>
+
+            <br>
+            <div class="fb-comments" data-numposts="5"></div>
+            <br>
+            <a href="http://www.facebook.com/sharer.php?u=www.google.com&display=popup"><%= image_tag('descarga.jpeg', size: "183x35") %></a>
+            <br>
+
+            <%= link_to 'Edit', edit_album_path(@album) %> |
+            <%= link_to 'Back', albums_path %>
+        </article>
+    </div>
+</section>
+<section id="one">
+  <div class="inner">
+    <% if user_signed_in? %>
+      <%= render 'arform', album_review: AlbumReview.new(user_id: current_user.id, album_id: @album.id) %>
     <% end %>
-  </tbody>
-</table>
 
-<%= link_to 'Edit', edit_album_path(@album) %> |
-<%= link_to 'Back', albums_path %>
+    <header class="major special">
+        <h4>Reviews</h4>
+    </header>
+    <% AlbumReview.all.each do |r| %>
+        <header>
+          <% if r.album_id == @album.id %>
+            <h5><%= link_to User.find(r.user_id).username, user_profile_path(:id => r.user_id)%></h5>
+            <pre><p><%= r.review %></p></pre>
+          <%end%>
+        </header>
+    <% end %>
+    <% if AlbumReview.where(album_id: @album.id).size == 0 %>
+      <em>No reviews yet, create one above!</em>
+      <br>
+    <% end %>
+  </div>
+</section>

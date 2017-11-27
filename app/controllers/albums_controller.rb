@@ -3,13 +3,39 @@ class AlbumsController < ApplicationController
 
   # GET /albums
   # GET /albums.json
+  # def index
+  #   @albums = Album.all
+  # end
+
   def index
     @albums = Album.all
+    if params[:search]
+      @albums = Album.search(params[:search]).order("created_at DESC")
+    else
+      @albums = Album.all.order("created_at DESC")
+    end
   end
 
   # GET /albums/1
   # GET /albums/1.json
   def show
+    Yt.configure do |config|
+      config.api_key = 'AIzaSyC9JzNrzyv99S7ldhQeVZykEBYRb9Mffsc'
+      @albums = Album.all
+    end
+    artist_name = Artist.find(@album.artist_id).name
+    videos = Yt::Collections::Videos.new
+    id_video = videos.where(q: @album.name + ' ' +artist_name,
+          order: 'relevance').first.id
+    @url_youtube = '//www.youtube.com/embed/' + id_video
+
+    if params[:follow] == 'F'
+        User.find(current_user.id).albums << @album
+        render action: 'index'
+    elsif params[:follow] == 'U'
+        User.find(current_user.id).albums.delete(@album)
+        render action: 'index'
+    end
   end
 
   # GET /albums/new
@@ -69,6 +95,6 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:name, :artist_id, :genre_ids)
+      params.require(:album).permit(:name, :artist_id, :genre_ids, :image)
     end
 end

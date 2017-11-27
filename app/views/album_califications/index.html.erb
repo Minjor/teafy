@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Album Califications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Album</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @album_califications.each do |album_calification| %>
+      <tr>
+        <td><%= album_calification.album_id %></td>
+        <td><%= album_calification.user_id %></td>
+        <td><%= link_to 'Show', album_calification %></td>
+        <td><%= link_to 'Edit', edit_album_calification_path(album_calification) %></td>
+        <td><%= link_to 'Destroy', album_calification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Album Calification', new_album_calification_path %>

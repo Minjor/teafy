@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @artist_calification.artist_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @artist_calification.user_id %>
+</p>
+
+<p>
+  <strong>Grade.integer:</strong>
+  <%= @artist_calification.grade.integer %>
+</p>
+
+<%= link_to 'Edit', edit_artist_calification_path(@artist_calification) %> |
+<%= link_to 'Back', artist_califications_path %>

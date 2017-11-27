@@ -1,36 +1,68 @@
-<p id="notice"><%= notice %></p>
+<section id="one">
+    <div class="inner">
+        <p id="notice"><%= notice %></p>
+        <h1>Albums</h1>
+        <%= form_tag(albums_path, :method => "get", id: "search-form") do %>
+        <div class="row uniform 50%">
+            <div class="6u 12u$(xsmall)">
+              <%= text_field_tag :search, params[:search], placeholder: "Search Albums" %>
+            </div>
+            <div>
+              <%= submit_tag "Search", :name => nil %>
+            </div>
+        </div>
+        <% end %>
+        <% if user_signed_in? %>
+            <% @user = User.find(current_user.id) %>
+        <% end %>
 
-<h1>Albums</h1>
+        <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Album cover</th>
+                  <th>Name</th>
+                  <th>Artist</th>
+                  <th>Genres</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Artist</th>
-      <th>Genres</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+              <tbody>
+                <% @albums.each do |album| %>
+                  <tr>
+                    <td><%= image_tag(album.image.url, size: 100) %></td>
+                    <td><%= link_to album.name, album_path(album.id)%></td>
+                    <td><%= link_to Artist.find(album.artist_id).name, Artist.find(album.artist_id) %></td>
 
-  <tbody>
-    <% @albums.each do |album| %>
-      <tr>
-        <td><%= album.name %></td>
-        <td><%= link_to Artist.find(album.artist_id).name, Artist.find(album.artist_id) %></td>
-        <td><%= link_to 'Genres', genres_path(:album_id => album.id) %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
-<% if @albums.size == 0 %>
-  <em>No albums yet</em>
-  <br>
-<% end %>
-<br>
-<%= link_to 'Home', homepage_path %>
-&emsp;
-<%= link_to 'New Album', new_album_path %>
+                    <% album.genres.each do |genre| %>
+                      <td><%= link_to genre.name, genre_path(genre.id) %></td>
+                    <% end %>
+                    <% if current_user.admin? %>
+                      <td><%= link_to 'Edit', edit_album_path(album) %></td>
+                      <td><%= link_to 'Delete', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <% end %>
+                    <% if @user.albums.include? album %>
+                      <td><%= link_to '✭', album_path({:id => album.id, :follow => 'U'}) %></td>
+                    <% else %>
+                      <td><%= link_to '✩', album_path({:id => album.id, :follow => 'F'}) %></td>
+                    <% end %>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+        </div>
+
+        <br>
+        <% if @albums.size == 0 %>
+          <em>No albums yet</em>
+          <br>
+        <% end %>
+        <br>
+        <a href="<%= homepage_path %>" class="button alt small">Home</a>
+        &emsp;
+        <% if user_signed_in? %>
+          <a href="<%= new_album_path %>" class="button alt small">Add album</a>
+        <% end %>
+    </div>
+</section>

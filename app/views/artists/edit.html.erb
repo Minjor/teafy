@@ -1,6 +1,13 @@
 <h1>Editing Artist</h1>
 
-<%= render 'form', artist: @artist %>
+<% if user_signed_in? && current_user.admin?%>
+  <%= render 'form', artist: @artist %>
 
-<%= link_to 'Show', @artist %> |
+  <%= link_to 'Show', @artist %> |
+  <%= link_to 'Back', artists_path %>
+
+<% else %>
+  <p>You don't have permission to edit this artist. Please go back to the homepage.</p>
+<% end %>
+
 <%= link_to 'Back', artists_path %>

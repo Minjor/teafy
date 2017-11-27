@@ -1,0 +1,42 @@
+<section id="two">
+    <div class="inner">
+        <article>
+            <h2><%= @user.username %></h2>
+            <p>
+              <strong></strong>
+              <%= image_tag @user.pic.url, size: 200 %>
+            </p>
+
+            <% if @user.admin? %>
+              <p> <strong>Role: </strong> Admin</p>
+            <% else %>
+              <p><strong>Role: </strong>User</p>
+            <% end %>
+            <p>
+              <strong>Registered mail: </strong>
+              <%= @user.email %>
+            </p>
+            <p>
+              <strong>Join: </strong>
+              <%= @user.created_at.strftime("%Y/%m/%d") %>
+            </p>
+            <% if @user.id == current_user.id %>
+                <p> <%= link_to "Settings", edit_user_registration_path(:id => @user.id) %> </p>
+            <% end %>
+        </article>
+
+        <!-- Playlists -->
+        <article class="alt">
+            <br>
+            <h3>Playlists</h3>
+                <ul class="alt">
+                    <% Playlist.where(user_id: @user.id).each do |p|%>
+                    <li><%= link_to p.name, playlist_path(:id => p.id) %></li>
+                    <% end %>
+                    <% if user_signed_in? && current_user.id == @user.id %>
+                        <li><a href="/playlists/new" class="button alt small">New Playlist</a></li>
+                    <% end %>
+                </ul>
+        </article>
+    </div>
+</section>

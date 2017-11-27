@@ -4,12 +4,15 @@ class GenresController < ApplicationController
   # GET /genres
   # GET /genres.json
   def index
+    @genres = Genre.all
     if params[:artist_id]
       @genres = Artist.find(params[:artist_id]).genres
     elsif params[:album_id]
       @genres = Album.find(params[:album_id]).genres
+    elsif params[:search]
+      @genres = Genre.search(params[:search]).order("created_at DESC")
     else
-      @genres = Genre.all
+      @genres = Genre.all.order("created_at DESC")
     end
   end
 

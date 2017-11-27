@@ -1,0 +1,25 @@
+<%= form_for(artist_calification) do |f| %>
+  <% if artist_calification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(artist_calification.errors.count, "error") %> prohibited this artist_calification from being saved:</h2>
+
+      <ul>
+      <% artist_calification.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :artist_id, :value => @artist.id %>
+
+  <div class="field">
+    <%= f.label :your_grade %>
+    <%= f.select :grade, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

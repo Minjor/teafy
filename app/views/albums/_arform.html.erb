@@ -1,0 +1,26 @@
+<%= form_for(album_review) do |f| %>
+  <% if album_review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(album_review.errors.count, "error") %> prohibited this album_review from being saved:</h2>
+
+      <ul>
+      <% album_review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+    <%= f.label :Post_a_review %>
+    <%= f.text_area :review %>
+  </div>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :album_id, :value => @album.id %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

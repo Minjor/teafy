@@ -5,11 +5,34 @@ class SongsController < ApplicationController
   # GET /songs.json
   def index
     @songs = Song.all
+    if params[:search]
+      @songs = Song.search(params[:search]).order("created_at DESC")
+    else
+      @songs = Song.all.order("created_at DESC")
+    end
   end
-
   # GET /songs/1
   # GET /songs/1.json
   def show
+    Yt.configure do |config|
+      config.api_key = 'AIzaSyC9JzNrzyv99S7ldhQeVZykEBYRb9Mffsc'
+    @songs = Song.all
+    if params[:follow] == 'F'
+        User.find(current_user.id).songs << @song
+        render action: 'index'
+    elsif params[:follow] == 'U'
+        User.find(current_user.id).songs.delete(@song)
+        render action: 'index'
+    end
+  end
+
+    videos = Yt::Collections::Videos.new
+
+    id_video = videos.where(q: @song.name + ' ' + @song.artist.name,
+          order: 'relevance').first.id
+
+    @url_youtube = '//www.youtube.com/embed/' + id_video
+
   end
 
   # GET /songs/new
@@ -60,6 +83,19 @@ class SongsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  # POST /songs/follow
+    def follow
+        User.find(current_user.id).songs << Song.find(params[:id])
+        render action: 'index'
+    end
+
+  # # POST /songs/unfollow
+    def unfollow
+        User.find(current_user.id).songs.delete(Song.find(params[:id]))
+        render action: 'index'
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.

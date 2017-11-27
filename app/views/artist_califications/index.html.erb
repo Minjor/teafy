@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Artist Califications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Artist</th>
+      <th>User</th>
+      <th>Grade.integer</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @artist_califications.each do |artist_calification| %>
+      <tr>
+        <td><%= artist_calification.artist_id %></td>
+        <td><%= artist_calification.user_id %></td>
+        <td><%= artist_calification.grade.integer %></td>
+        <td><%= link_to 'Show', artist_calification %></td>
+        <td><%= link_to 'Edit', edit_artist_calification_path(artist_calification) %></td>
+        <td><%= link_to 'Destroy', artist_calification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Artist Calification', new_artist_calification_path %>

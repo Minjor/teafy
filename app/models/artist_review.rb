@@ -1,0 +1,2 @@
+class ArtistReview < ApplicationRecord
+end

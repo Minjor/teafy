@@ -1,18 +1,53 @@
-<p id="notice"><%= notice %></p>
+<section id="two">
+    <div class="inner">
+        <article>
+            <p id="notice"><%= notice %></p>
 
-<h2>
-  <strong><%= @song.name %></strong>
-</h2>
+            <h2>
+              <strong><%= @song.name %></strong>
+            </h2>
 
-<p>
-  <strong>Album:</strong>
-  <%= Album.find(@song.album_id).name %>
-</p>
+            <p>
+              <strong>Album:</strong>
+              <%= Album.find(@song.album_id).name %>
+            </p>
 
-<p>
-  <strong>Artist:</strong>
-  <%= Artist.find(@song.artist_id).name %>
-</p>
+            <p>
+              <strong>Artist:</strong>
+              <%= Artist.find(@song.artist_id).name %>
+            </p>
+            <div>
+                <p>
+                    <strong>Rating: </strong>
+                    <%= SongCalification.where(song_id: @song.id).average(:grade) %>
+                </p>
+                <% if user_signed_in?
+                    if User.find(current_user.id).song_calification
+                        @c = User.find(current_user.id).song_calification
+                    else
+                        @c = SongCalification.new
+                    end %>
+                    <%= render 'scform', song_calification: @c %>
+                <% end %>
+            </div>
+        </article>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+        <article>
+            <br><br><br>
+            <h4>Video</h4>
+            <br>
+            <iframe width="480" height="270" src="<%= @url_youtube %>"
+            frameborder="0" gesture="media" allowfullscreen></iframe>
+            <br>
+            <div class="fb-comments" data-numposts="5"></div>
+            <br>
+
+            <a href="http://www.facebook.com/sharer.php?u=www.google.com&display=popup"><%= image_tag('descarga.jpeg', size: "183x35") %></a>
+            <br>
+
+            <%= social_share_button_tag(@song.name) %>
+            <%= link_to 'Edit', edit_song_path(@song) %> |
+            <%= link_to 'Back', songs_path %>
+        </article>
+    </div>
+</section>

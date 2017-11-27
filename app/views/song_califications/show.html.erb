@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @song_calification.user_id %>
+</p>
+
+<p>
+  <strong>Song:</strong>
+  <%= @song_calification.song_id %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @song_calification.grade %>
+</p>
+
+<%= link_to 'Edit', edit_song_calification_path(@song_calification) %> |
+<%= link_to 'Back', song_califications_path %>

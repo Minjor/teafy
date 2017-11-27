@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Playlist:</strong>
+  <%= @playlist_calification.playlist_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @playlist_calification.user_id %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @playlist_calification.grade %>
+</p>
+
+<%= link_to 'Edit', edit_playlist_calification_path(@playlist_calification) %> |
+<%= link_to 'Back', playlist_califications_path %>

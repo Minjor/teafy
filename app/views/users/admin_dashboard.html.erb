@@ -1,0 +1,96 @@
+<% if user_signed_in? && current_user.admin?%>
+
+<section id="two">
+    <div class="inner">
+      <article>
+        <h1>Admin Dashboard</h1>
+        <p align="center" id="notice"><%= notice %></p>
+        <h3>User's Statistics</h3>
+        <h5>Users created by day</h5>
+          <%= area_chart User.group_by_day(:created_at).count, download: true, xtitle: "Date", ytitle: "Number of Users" %>
+          <br>
+        <h5>User's last log in by day</h5>
+          <%= line_chart User.group_by_day(:last_sign_in_at).count, download: true, xtitle: "Date", ytitle: "Number of Users" %>
+          <br>
+        <h5>Users by admin role</h5>
+          <%= pie_chart User.group(:admin).count, download: true %>
+
+          <br>
+          <br>
+          <h3>Playlist's Statistics</h3>
+          <h5>Playlists created by day</h5>
+            <%= area_chart Playlist.group_by_day(:created_at).count, download: true, xtitle: "Date", ytitle: "Number of Playlists"%>
+          <br>
+
+      </article>
+
+      <article>
+        <br><br><br>
+        <h3>Song's Statistics</h3>
+        <h5>Songs created by day</h5>
+          <%= line_chart Song.group_by_day(:created_at).count, download: true, xtitle: "Date", ytitle: "Number of Songs"%>
+        <br>
+        <h5>Songs by artist</h5>
+          <%= column_chart Song.group(:artist).count, download: true, xtitle: "Date", ytitle: "Number of Songs"  %>
+
+        <br>
+        <br>
+        <h3>Album's Statistics</h3>
+        <h5>Albums created by day</h5>
+          <%= line_chart Album.group_by_day(:created_at).count, download: true, xtitle: "Date", ytitle: "Number of Albums"%>
+        <br>
+
+        <br>
+        <h3>Artist's Statistics</h3>
+        <h5>Artists created by day</h5>
+          <%= line_chart Artist.group_by_day(:created_at).count, download: true, xtitle: "Date", ytitle: "Number of Artist"%>
+        <br>
+
+
+
+        </article>
+      </div>
+  </section>
+<br>
+
+<section id="one">
+    <div class="inner">
+      <h3>Users</h3>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Username</th>
+            <th>Mail</th>
+            <th>Role</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= image_tag(user.pic.url, size: 100) %></td>
+              <td><%= link_to user.username, user_profile_path(:id => user.id) %></td>
+              <td><%= user.email %></td>
+              <% if user.admin? %>
+                <td>Admin</td>
+              <% else %>
+                <td>User</td>
+              <% end %>
+              <td><%= link_to 'Change role', change_role_path(:id => user.id), method: :post, data: { confirm: "Are you sure you want change the role of the account?" } %></td>
+              <td><%= link_to 'Cancel Account', admin_destroy_user_path(user), method: :delete, data: { confirm: "Are you sure you want to cancel this account?" } %></td>
+
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to 'Back', homepage_path %>
+  </div>
+</section>
+
+<% else %>
+<h1>Admin Dashboard</h1>
+  <p>You don't have permission to enter here. Please go back to the homepage.</p>
+  <p><%= link_to 'Back', homepage_path %></p>
+<% end %>

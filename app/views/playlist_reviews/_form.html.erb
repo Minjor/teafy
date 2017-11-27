@@ -1,0 +1,32 @@
+<%= form_for(playlist_review) do |f| %>
+  <% if playlist_review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(playlist_review.errors.count, "error") %> prohibited this playlist_review from being saved:</h2>
+
+      <ul>
+      <% playlist_review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :playlist_id %>
+    <%= f.number_field :playlist_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :review %>
+    <%= f.text_area :review %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

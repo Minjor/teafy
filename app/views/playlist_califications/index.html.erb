@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Playlist Califications</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Playlist</th>
+      <th>User</th>
+      <th>Grade</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @playlist_califications.each do |playlist_calification| %>
+      <tr>
+        <td><%= playlist_calification.playlist_id %></td>
+        <td><%= playlist_calification.user_id %></td>
+        <td><%= playlist_calification.grade %></td>
+        <td><%= link_to 'Show', playlist_calification %></td>
+        <td><%= link_to 'Edit', edit_playlist_calification_path(playlist_calification) %></td>
+        <td><%= link_to 'Destroy', playlist_calification, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Playlist Calification', new_playlist_calification_path %>

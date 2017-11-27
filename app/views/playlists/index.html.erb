@@ -1,0 +1,31 @@
+<section id="one">
+    <div class="inner">
+        <p id="notice"><%= notice %></p>
+
+        <h1>Playlists</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @playlists.each do |playlist| %>
+              <tr>
+                <td><%= link_to playlist.name, playlist_path(playlist.id) %></td>
+                <% if user_signed_in? && current_user.id == playlist.user_id%>
+                    <td><%= link_to 'Edit', edit_playlist_path(playlist) %></td>
+                    <td><%= link_to 'Delete', playlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <br>
+        <a href="<%= new_playlist_path %>" class="button alt small">Add playlist</a>
+    </div>
+</section>

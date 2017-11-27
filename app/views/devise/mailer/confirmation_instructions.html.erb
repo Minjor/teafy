@@ -1,5 +1,32 @@
-<p>Welcome <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+    <style media="screen" type="text/css">
+
+      h2 {font-family: "Lato";}
+      p {font-family: "Lato";}
+      h1{
+        color: #e5474b;
+        font-family: 'Pacifico';
+      }
+
+    </style>
+  </head>
+
+
+  <body>
+    <h2>Welcome to Teafy App, <%= @user.username %>!</h2>
+    <p>
+      You have successfully signed up to Teafy App,
+      your username is: <%= @user.username %>.<br>
+    </p>
+    <p>
+      To start listening to awesome music, just follow the link below!
+    </p>
+    <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+module ArtistReviewsHelper
+end

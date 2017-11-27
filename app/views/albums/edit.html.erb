@@ -1,6 +1,13 @@
 <h1>Editing Album</h1>
 
-<%= render 'form', album: @album %>
+<% if user_signed_in? && current_user.admin?%>
+  <%= render 'form', album: @album %>
 
 <%= link_to 'Show', @album %> |
 <%= link_to 'Back', albums_path %>
+
+<% else %>
+  <p>You don't have permission to edit this album. Please go back to the homepage.</p>
+<% end %>
+
+<%= link_to 'Back', artists_path %>

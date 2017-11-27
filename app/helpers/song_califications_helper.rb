@@ -1,0 +1,2 @@
+module SongCalificationsHelper
+end

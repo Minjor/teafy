@@ -1,8 +1,18 @@
-<p id="notice"><%= notice %></p>
+<section id="one">
+    <div class="inner">
+        <p id="notice"><%= notice %></p>
 
-<h2>
-  <strong><%= @genre.name %></strong>
-</h2>
+        <h2>
+          <strong><%= @genre.name %></strong>
+        </h2>
 
-<%= link_to 'Edit', edit_genre_path(@genre) %> |
-<%= link_to 'Back', genres_path %>
+        <br>
+        <div class="fb-comments" data-numposts="5"></div>
+        <br>
+        <a href="http://www.facebook.com/sharer.php?u=www.google.com&display=popup"><%= image_tag('descarga.jpeg', size: "183x35") %></a>
+        <br>
+
+        <%= link_to 'Edit', edit_genre_path(@genre) %> |
+        <%= link_to 'Back', genres_path %>
+    </div>
+</section>

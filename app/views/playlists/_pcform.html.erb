@@ -1,0 +1,25 @@
+<%= form_for(playlist_calification) do |f| %>
+  <% if playlist_calification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(playlist_calification.errors.count, "error") %> prohibited this playlist_calification from being saved:</h2>
+
+      <ul>
+      <% playlist_calification.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.hidden_field :playlist_id, :value => @playlist.id %>
+
+  <div class="field">
+    <%= f.label :your_grade %>
+    <%= f.select :grade, [['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]] %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @album_calification.album_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @album_calification.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_album_calification_path(@album_calification) %> |
+<%= link_to 'Back', album_califications_path %>

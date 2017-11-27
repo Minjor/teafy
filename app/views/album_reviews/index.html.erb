@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Album Reviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Album</th>
+      <th>User</th>
+      <th>Review</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @album_reviews.each do |album_review| %>
+      <tr>
+        <td><%= album_review.album_id %></td>
+        <td><%= album_review.user_id %></td>
+        <td><%= album_review.review %></td>
+        <td><%= link_to 'Show', album_review %></td>
+        <td><%= link_to 'Edit', edit_album_review_path(album_review) %></td>
+        <td><%= link_to 'Destroy', album_review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Album Review', new_album_review_path %>

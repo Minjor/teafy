@@ -1,22 +1,100 @@
-<p id="notice"><%= notice %></p>
-<% if user_signed_in? %>
-  <p align="right">
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  </p>
-<% else %>
-  <p align='right'>
-  <%= link_to('Login', new_user_session_path)  %>
-  </p>
-<% end %>
+<section id="one">
+    <div class="inner">
+      <%= image_tag 'teafy_banner_4.png', size: "1101x208" %>
 
-<h1>Teafy</h1>
-<br>
-<h2>
-<%=link_to 'Genres', genres_path %>
-&emsp;
-<%=link_to 'Artists', artists_path %>
-&emsp;
-<%=link_to 'Albums', albums_path %>
-&emsp;
-<%=link_to 'Songs', songs_path %>
-</h2>
+    </div>
+</section>
+
+<section id="two">
+    <div class="inner">
+        <!-- Izquierda -->
+        <article>
+            <p id="notice" align="center"><%= notice %></p>
+            <!-- Genres -->
+            <div class="content">
+                <header>
+                    <h3><%=link_to 'Genres', genres_path %></h3>
+                </header>
+                <div class="image fit">
+                    <%= image_tag 'genres.jpg' %>
+                </div>
+                <p>Here you'll find all the music genres we have to offer</p>
+            </div>
+            <!-- Playlists -->
+            <div class="content">
+                <header>
+                    <h3><%=link_to 'Playlists', playlists_path %></h3>
+                </header>
+                <div class="image fit">
+                    <%= image_tag 'playlists.jpg' %>
+                </div>
+                <p>Find out all the playlists that other users have made here!</p>
+            </div>
+            <!-- Users -->
+            <div class="content">
+                <header>
+                    <h3><%=link_to 'Users', users_path %></h3>
+                </header>
+                <div class="image fit">
+                    <%= image_tag 'users.jpg' %>
+                </div>
+                <p>Find your friends here!</p>
+            </div>
+        </article>
+
+        <!-- Derecha -->
+        <article class="alt">
+            <!-- Artists -->
+            <br>
+            <div class="content">
+                <header>
+                    <h3><%=link_to 'Artists', artists_path %></h3>
+                </header>
+                <div class="image fit">
+                    <%= image_tag 'artists.jpg' %>
+                </div>
+                <p>All your favourite artists!</p>
+            </div>
+            <!-- Albums -->
+            <div class="content">
+                <header>
+                    <h3><%=link_to 'Albums', albums_path %></h3>
+                </header>
+                <div class="image fit">
+                    <%= image_tag 'albums.jpg' %>
+                </div>
+                <p>All your favourite albums!</p>
+            </div>
+            <!-- Songs -->
+            <div class="content">
+                <header>
+                    <h3><%=link_to 'Songs', songs_path %></h3>
+                </header>
+                <div class="image fit">
+                    <%= image_tag 'songs.jpg' %>
+                </div>
+                <p>All your favourite songs!</p>
+            </div>
+        </article>
+    </div>
+</section>
+<section id="one">
+    <div class="inner">
+        <!-- Reports -->
+        <header class="major special">
+            <h1 align="center">Reports</h1>
+            <p align="center">to keep you updated on all the news about your favourite artists</p>
+        </header>
+        <% Report.all.each do |r| %>
+            <header>
+                <h4><%= r.title %></h4>
+                <p><%= r.content %></p>
+            </header>
+            <hr />
+        <% end %>
+        <% if user_signed_in? && current_user.admin? %>
+            <% @news = Report.new %>
+            <a href="<%= new_report_path %>" class="button alt small">Add Report</a>
+        <% end %>
+    </div>
+</section>

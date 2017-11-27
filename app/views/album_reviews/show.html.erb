@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @album_review.album_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @album_review.user_id %>
+</p>
+
+<p>
+  <strong>Review:</strong>
+  <%= @album_review.review %>
+</p>
+
+<%= link_to 'Edit', edit_album_review_path(@album_review) %> |
+<%= link_to 'Back', album_reviews_path %>
